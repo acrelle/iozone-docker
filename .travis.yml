@@ -20,7 +20,7 @@ script:
     tar xzf qemu-arm-static.tar.gz &&
     popd
   
-  - docker build --build-arg PLATFORM=linux-arm -t acrelle/iozone:linux-arm -f linux-arm32v7.Dockerfile .
+  - docker build --build-arg PLATFORM=linux-arm -t acrelle/iozone:linux-arm -f linux-arm32v6.Dockerfile .
 
   - >
 
