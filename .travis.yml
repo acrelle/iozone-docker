@@ -1,0 +1,12 @@
+language: bash
+
+services:
+- docker
+
+script:
+
+  # Build all images
+  - docker build --build-arg PLATFORM=linux-amd64 -t acrelle/iozone:linux-amd64 -f Dockerfile .
+  - travis_retry timeout 5m docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
+  - docker push acrelle/iozone:linux-amd64
+  
