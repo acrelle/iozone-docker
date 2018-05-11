@@ -1,7 +1,8 @@
-FROM arm32v6/alpine
-COPY tmp/qemu-arm-static /usr/bin/qemu-arm-static
+FROM resin/armhf-alpine
 
 LABEL maintainer="anthony@relle.co.uk"
+
+RUN [ "cross-build-start" ]
 
 RUN apk --update upgrade && \
     apk add --no-cache --virtual=temporary curl gcc make build-base && \
@@ -13,6 +14,8 @@ RUN apk --update upgrade && \
     cp iozone /usr/bin/iozone && \
     apk del temporary && \
     rm -rf /var/cache/apk/* /tmp/iozone*
+
+RUN [ "cross-build-end" ]
 
 ENTRYPOINT ["/usr/bin/iozone"]
 
