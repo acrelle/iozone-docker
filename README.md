@@ -24,7 +24,7 @@ To run benchmark using some defaults:
  docker run --rm acrelle/iozone 
 ```
 
-To overide the default commmand line switches:
+To overide the default command line switches:
 
 ```
  docker run --rm acrelle/iozone -e -I -a -s 100M -r 4k -i 0 -i 1 -i 2
