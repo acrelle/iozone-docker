@@ -14,4 +14,5 @@ RUN apk --update upgrade && \
     rm -rf /var/cache/apk/* /tmp/iozone*
 
 ENTRYPOINT ["/usr/bin/iozone"]
+CMD ["-e","-I","-a","-s","100M","-r","4k","-i","0","-i","1","-i","2"]
 
