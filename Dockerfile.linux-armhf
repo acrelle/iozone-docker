@@ -1,7 +1,7 @@
 FROM resin/armhf-alpine
 
-LABEL maintainer="anthony@relle.co.uk"
-LABEL izone_version="3.434"
+LABEL maintainer="anthony@relle.co.uk" \
+    izone_version="3.434"
 
 RUN [ "cross-build-start" ]
 
