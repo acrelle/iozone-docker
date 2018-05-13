@@ -1,6 +1,7 @@
 FROM alpine
 
 LABEL maintainer="anthony@relle.co.uk"
+LABEL izone_version="3.434"
 
 RUN apk --update upgrade && \
     apk add --no-cache --virtual=temporary curl gcc make build-base && \
